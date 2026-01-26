@@ -10,17 +10,16 @@
         label = "KSCAN";
         diode-direction = "col2row";
 
-        // 基板の「002」ピン
+        // 帰り道（Row）を「113」に変更
         row-gpios
-            = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            = <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
 
-        // 基板の「006」「017」「020」ピン
-        // 017は「gpio0の17」ではなく「gpio1の1」という名前なのが落とし穴なんだ！
+        // 行き道（Col）を右側の安全なピンに変更
         col-gpios
-            = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   // 基板の006
-            , <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   // 基板の017 (★ここがポイント！)
-            , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // 基板の020
+            = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 基板の 031
+            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 基板の 029
+            , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 基板の 002
             ;
     };
 };
