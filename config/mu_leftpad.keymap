@@ -6,10 +6,11 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            // A, B, C を本来の役割に戻すよ！
             bindings = <
-                &kp A
-                &kp B
-                &kp C
+                &kp LSHFT    // 113と031を繋ぐと「左シフト」
+                &kp LGUI     // 113と029を繋ぐと「コマンドキー（Mac）」
+                &kp Z        // 113と002を繋ぐと「Z」
             >;
         };
     };
