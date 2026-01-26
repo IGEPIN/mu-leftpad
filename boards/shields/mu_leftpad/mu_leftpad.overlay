@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/keys.h>
 #include <drivers/gpio.h>
 
 / {
@@ -10,14 +9,16 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "col2row"; // ダイオードの向き（今回はこれを入れるのが一般的だよ）
+        diode-direction = "col2row";
 
-        row-gpios = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        row-gpios
+            = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            ;
 
-        col-gpios = <
-            &pro_micro 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
-            &pro_micro 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
-            &pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)
-        >;
+        col-gpios
+            = <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            ;
     };
 };
