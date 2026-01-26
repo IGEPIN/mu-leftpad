@@ -1,14 +1,14 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // ここに3つのボタンの役割を書くよ
-            // 順番は左から順（配線した順）になるよ
+            // ここが9行目あたりになるはず
             bindings = <
-                &kp LSHIFT    // 1つめのボタン：シフト
-                &kp LGUI      // 2つめのボタン：コマンド（Mac用）
-                &kp Z         // 3つめのボタン：Z
+                &kp LSHIFT &kp LGUI &kp Z
             >;
         };
     };
