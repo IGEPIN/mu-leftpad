@@ -1,15 +1,7 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            // ここが9行目あたりになるはず
+default_layer {
             bindings = <
-                &kp LSHIFT &kp LGUI &kp Z
+                &kp A    // 1つめのボタン（元Shift）
+                &kp B    // 2つめのボタン（元Command）
+                &kp C    // 3つめのボタン（元Z）
             >;
         };
-    };
-};
